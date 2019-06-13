@@ -1,0 +1,12 @@
+<select (change)="onChange($event.target.value)">
+  <option value="allABV">All</option>
+  <option value="high abv">Beers with higher ABV</option>
+  <option value="low abv">Beers with lower ABV</option>
+</select>
+<body>
+
+
+<ul>
+  <li *ngFor='let currentKeg of childKegList | abv:filterByABV'>Name:{{currentKeg.name}}, Brand: {{currentKeg.brand}}, Price: ${{currentKeg.price}}, ABV: {{currentKeg.ABV}}%, Volume By Pint: {{currentKeg.volume}}<button (click)='editButtonClicked(currentKeg)'>Edit</button><button (click)='sellButtonClicked(currentKeg)'>Sell A Pint</button></li>
+</ul>
+</body>

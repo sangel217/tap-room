@@ -1,0 +1,11 @@
+body {
+  color: magenta;
+  background-color: yellow;
+}
+
+button{
+  color: white;
+  background-color: magenta;
+  font-size: 20px;
+  border-radius: 50%;
+}

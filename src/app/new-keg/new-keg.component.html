@@ -1,0 +1,87 @@
+<body>
+
+
+
+<h1>New Keg</h1>
+<div>
+  <label>Name of Beer:</label>
+<input #newName>
+</div>
+<div>
+ <label>Brand:</label>
+ <input #newBrand>
+</div>
+<div>
+  <label>Price:</label>
+  <select #newKegPrice>
+      <option value="1">$1</option>
+      <option value="2">$2</option>
+      <option value="3">$3</option>
+      <option value="4">$4</option>
+      <option value="5">$5</option>
+      <option value="6">$6</option>
+      <option value="7">$7</option>
+      <option value="8">$8</option>
+      <option value="9">$9</option>
+      <option value="10">$10</option>
+      <option value="11">$11</option>
+      <option value="12">$12</option>
+      <option value="13">$13</option>
+      <option value="14">$14</option>
+      <option value="15">$15</option>
+    </select>
+  </div>
+  <div>
+    <select #newABV>
+      <option value="4">4%</option>
+      <option value="6">6%</option>
+      <option value="8">8%</option>
+      <option value="10">10%</option>
+    </select>
+  </div>
+  <div>
+    <input type="hidden" #newVolume value="124">
+
+  <button (click)="submitForm(newName.value, newBrand.value, newKegPrice.value, newABV.value, newVolume.value);">Add</button>
+</div>
+
+
+
+
+<div *ngIf="childSelectedKeg">
+  <h3>{{childSelectedKeg.description}}</h3>
+  <p>Keg Complete? {{childSelectedKeg.done}}</p>
+  <h3>Edit Keg</h3>
+  <label>Enter Keg Name:</label>
+  <input [(ngModel)]="childSelectedKeg.name">
+  <label>Enter Brand:</label>
+  <input [(ngModel)]="childSelectedKeg.brand">
+  <label>Enter Price:</label>
+  <select [(ngModel)]="childSelectedKeg.price" >
+    <option value="1">$1</option>
+    <option value="2">$2</option>
+    <option value="3">$3</option>
+    <option value="4">$4</option>
+    <option value="5">$5</option>
+    <option value="6">$6</option>
+    <option value="7">$7</option>
+    <option value="8">$8</option>
+    <option value="9">$9</option>
+    <option value="10">$10</option>
+    <option value="11">$11</option>
+    <option value="12">$12</option>
+    <option value="13">$13</option>
+    <option value="14">$14</option>
+    <option value="15">$15</option>
+  </select>
+  <label>Enter ABV:</label>
+  <select [(ngModel)]="childSelectedKeg.ABV" >
+    <option value="4">4%</option>
+    <option value="6">6%</option>
+    <option value="8">8%</option>
+  </select>
+  <label>Volume(max of 124 pints)</label>
+  <input [(ngModel)]="childSelectedKeg.volume">
+  <button (click)="finishedEditing()">Done</button>
+</div>
+</body>
